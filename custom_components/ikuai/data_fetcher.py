@@ -216,7 +216,7 @@ class DataFetcher:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.40 Safari/537.36',
         }
         
-        json_body = {"func_name":"lan","action":"show","param":{"TYPE":"ether_info,snapshoot"}}
+        json_body = {"func_name":"monitor_iface","action":"show","param":{"TYPE":"ether_info,iface_check,snapshoot"}}
         
 
         url =  self._host + ACTION_URL
@@ -250,6 +250,16 @@ class DataFetcher:
                 self._data["ikuai_wan_ip"] = ""
                 self._data["ikuai_wan_uptime"] = ""
         
+
+        if resdata["Data"].get("iface_check"):
+            wanNum=1
+            for eachWan in resdata["Data"]["iface_check"]:
+                wanName=f"ikuai_wan_ip{wanNum}"
+                wanAtr=f"ikuai_wan_ip{wanNum}_attrs"
+                
+                self._data[wanName]=eachWan["ip_addr"]
+                self._data[wanAtr]=eachWan
+                wanNum+=1
         return
         
     async def _get_ikuai_showvlan(self, sess_key, vlan_internet):
