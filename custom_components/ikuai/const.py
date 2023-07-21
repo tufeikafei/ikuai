@@ -157,32 +157,5 @@ SWITCH_TYPES = {
 }
 
 DEVICE_TRACKERS = {
-    "myiphone": {
-        "label": "我的手机",
-        "name": "xiaomi13",
-        "icon": "mdi:cellphone",
-        "mac_address": "f8:ab:82:a9:3a:13",
-        "disconnect_refresh_times": 5
-    },
-    "zyiphone": {
-        "label": "ZY的手机",
-        "name": "iPhone12",
-        "icon": "mdi:cellphone",
-        "mac_address": "26:10:28:fb:44:5e",
-        "disconnect_refresh_times": 2
-    }, 
-    "wawatch": {
-        "label": "娃的手表",
-        "name": "小天才手表",
-        "icon": "mdi:cellphone",
-        "mac_address": "14:9f:b6:64:ed:6c",
-        "disconnect_refresh_times": 3
-    },
-    "yephone": {
-        "label": "爷爷的手机",
-        "name": "16s",
-        "icon": "mdi:cellphone",
-        "mac_address": "90:f0:52:8f:0c:00",
-        "disconnect_refresh_times": 5
-    },    
+ 
 }
